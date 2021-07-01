@@ -1,0 +1,48 @@
+package com.wjnovoa.ejercicioconteo;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class ConteoPalabras {
+
+    public String[] readFile(File file){
+        String lines = "";
+        try {
+            Scanner sc = new Scanner(file);
+            while(sc.hasNextLine()){
+                lines += sc.nextLine();
+            }
+
+        } catch (FileNotFoundException e) {
+            System.out.println("Excepcion al leer el archivo "+e);
+        }
+        return lines.split(" ");
+    }
+
+    public boolean showResult(int totalPalabras, String[ ] lines){
+        boolean result = false;
+
+        File file = new File("result.txt");
+
+        try {
+            FileWriter fw = new FileWriter(file);
+            String aux = "";
+            for(String line: lines){
+                aux += line;
+                aux += " ";
+            }
+            fw.write("El archivo tiene "+totalPalabras+ " palabras "+"\n"+ aux);
+            fw.close();
+            result = true;
+
+        } catch (IOException e) {
+            System.out.println("Excepcion al crear el archivo "+e);
+        }
+
+        return result;
+    }
+
+}

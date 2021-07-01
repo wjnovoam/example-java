@@ -3,7 +3,7 @@ package com.wjnovoa.manipulacionstrings;
 import java.util.Locale;
 
 public class ManipulacionStrings {
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         //METODOS DE INDEXACION
         String s1 = "Hola mundo";
         int longitud = s1.length();
@@ -41,5 +41,7 @@ public class ManipulacionStrings {
         System.out.println("Contains: "+contain);
         boolean equal = s4.equals("Hola mundo");
         System.out.println("Equals: "+ equal);
-    }
+        boolean equalSIgnoreCas = s4.equalsIgnoreCase("hola mundo");
+        System.out.println("equalSIgnoreCas: "+ equalSIgnoreCas);
+    }*/
 }
